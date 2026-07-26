@@ -28,9 +28,9 @@ architectures and modern practice.
 
 **Every Sunday, 7:00&nbsp;pm Tehran time** (UTC+3:30; Iran no longer observes DST,
 so this is 15:30&nbsp;UTC year-round).
-{% if site.meet_url %}We meet on [Google Meet]({{ site.meet_url }}).{% else %}*(Add your recurring Google Meet link as `meet_url` in `_config.yml`.)*{% endif %}
+{% if site.meet_url != blank %}We meet on [Google Meet]({{ site.meet_url }}).{% else %}*(Add your recurring Google Meet link as `meet_url` in `_config.yml`.)*{% endif %}
 
-{% if site.calendar_embed_url %}
+{% if site.calendar_embed_url != blank %}
 Add the meetings to your own calendar:
 
 <iframe src="{{ site.calendar_embed_url }}" style="border:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
@@ -42,15 +42,15 @@ Everyone is welcome to present. Two ways to sign up:
 
 1. **Open a pull request** adding an entry to `_data/talks.yml` (see the file for
    the format), or
-2. {% if site.contact_email %}Email us at [{{ site.contact_email }}](mailto:{{ site.contact_email }}).{% else %}Email the organizers *(add a contact address in `_config.yml`)*.{% endif %}
+2. {% if site.contact_email != blank %}Email us at [{{ site.contact_email }}](mailto:{{ site.contact_email }}).{% else %}Email the organizers *(add a contact address in `_config.yml`)*.{% endif %}
 
 ## Stay in the loop
 
-{% if site.mailing_list_url %}
+{% if site.mailing_list_url != blank %}
 - Join the [mailing list]({{ site.mailing_list_url }}) for announcements.
 {% else %}
 - *Add a `mailing_list_url` in `_config.yml` to link your announcement list here.*
 {% endif %}
-{% if site.youtube_playlist_url %}
+{% if site.youtube_playlist_url != blank %}
 - Watch past sessions on [YouTube]({{ site.youtube_playlist_url }}).
 {% endif %}
