@@ -1,0 +1,48 @@
+# =============================================================
+#  ADD ONE ENTRY PER TALK.
+#  Order here does not matter — the site sorts by `date` and
+#  splits entries into "Upcoming" and "Past" automatically.
+#
+#  Fields:
+#    date         (required)  YYYY-MM-DD
+#    presenter    (required)  who is presenting
+#    affiliation  (optional)  their institution / group
+#    title        (required)  paper title
+#    paper        (optional)  URL to the paper (arXiv, OpenReview, ...)
+#    authors      (optional)  paper authors (esp. if presenting others' work)
+#    slides       (optional)  URL, or local path like /assets/slides/2026-08-05.pdf
+#    video        (optional)  YouTube (or other) URL
+#    abstract     (optional)  one or two sentences
+#
+#  The three entries below are placeholders — edit or delete them.
+# =============================================================
+
+- date: 2026-08-02
+  presenter: Erfan Mirzaei
+  affiliation: IIT &amp; UniGe
+  title: "The Implicit Bias of Gradient Descent on Separable Data"
+  paper: https://arxiv.org/abs/1710.10345
+  authors: Soudry, Hoffer, Nacson, Gunasekar, Srebro
+  slides: ""
+  video: ""
+  abstract: "Kickoff session: how gradient descent implicitly selects the max-margin solution."
+
+- date: 2026-07-19
+  presenter: Example Presenter
+  affiliation: Example Lab
+  title: "Neural Tangent Kernel: Convergence and Generalization in Neural Networks"
+  paper: https://arxiv.org/abs/1806.07572
+  authors: Jacot, Gabriel, Hongler
+  slides: ""
+  video: ""
+  abstract: "The infinite-width limit and the kernel that governs training dynamics."
+
+- date: 2026-07-12
+  presenter: Another Presenter
+  affiliation: Some Institute
+  title: "Reconciling Modern Machine Learning Practice and the Bias–Variance Trade-off"
+  paper: https://arxiv.org/abs/1812.11118
+  authors: Belkin, Hsu, Ma, Mandal
+  slides: ""
+  video: ""
+  abstract: "Double descent, and why overparameterization can help generalization."

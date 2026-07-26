@@ -1,0 +1,47 @@
+# ============================================================
+#  Deep Learning Theory Reading Group — site configuration
+# ============================================================
+
+title: Deep Learning Theory Reading Group
+description: >-
+  A biweekly reading group where one person presents one paper on the
+  theory of deep learning.
+
+# --- URL / hosting -------------------------------------------------
+# Case A (recommended): dedicated user/org site served at
+#   https://dl-theory-reading-group.github.io
+#   -> leave baseurl empty (as below) and set url accordingly.
+#
+# Case B: a project repo under your personal account, served at
+#   https://<your-username>.github.io/dl-theory-reading-group
+#   -> set   baseurl: "/dl-theory-reading-group"
+#   -> set   url:     "https://<your-username>.github.io"
+baseurl: ""
+url: "https://dl-theory-reading-group.github.io"
+
+# --- Theme ---------------------------------------------------------
+theme: minima
+minima:
+  skin: classic          # options: classic, dark, auto, solarized, solarized-dark
+
+# --- Top navigation ------------------------------------------------
+header_pages:
+  - about.md
+
+# --- Optional integrations (leave "" to hide them on the site) -----
+contact_email: ""          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
+mailing_list_url: ""       # e.g. https://groups.google.com/g/your-group
+youtube_playlist_url: "https://www.youtube.com/playlist?list=PLbvD9bdnxAes"
+meet_url: ""               # your recurring Google Meet link (see README / setup steps)
+calendar_embed_url: ""     # full src URL from Google Calendar's "Embed code" (see steps)
+
+# --- Build ---------------------------------------------------------
+plugins:
+  - jekyll-feed
+show_excerpts: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

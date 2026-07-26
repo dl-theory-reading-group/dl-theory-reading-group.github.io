@@ -1,0 +1,43 @@
+---
+# Front matter (these two lines) is required so Jekyll compiles this file.
+---
+
+@import "minima";
+
+/* Minimal styling for the talks tables — kept light to match the plain theme. */
+.talks {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.talks th,
+.talks td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #e8e8e8;
+  vertical-align: top;
+}
+
+.talks th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #555;
+}
+
+.talk-date {
+  white-space: nowrap;
+}
+
+.talk-muted {
+  color: #828282;
+  font-size: 0.9em;
+}
+
+.talk-abstract {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: #555;
+  font-size: 0.9em;
+}
