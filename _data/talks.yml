@@ -18,14 +18,14 @@
 # =============================================================
 
 - date: 2026-08-02
-  presenter: Erfan Mirzaei
-  affiliation: IIT &amp; UniGe
-  title: "The Implicit Bias of Gradient Descent on Separable Data"
-  paper: https://arxiv.org/abs/1710.10345
-  authors: Soudry, Hoffer, Nacson, Gunasekar, Srebro
+  presenter: Erfan Sobhaei
+  affiliation: Sharif University of Technology
+  title: "A Modern Take on the Bias-Variance Tradeoff in Neural Networks"
+  paper: https://arxiv.org/abs/1810.08591 
+  authors: Brady Neal, Sarthak Mittal, Aristide Baratin, Vinayak Tantia, Matthew Scicluna, Simon Lacoste-Julien, Ioannis Mitliagkas
   slides: ""
   video: ""
-  abstract: "Kickoff session: how gradient descent implicitly selects the max-margin solution."
+  abstract: "The bias-variance tradeoff tells us that as model complexity increases, bias falls and variances increases, leading to a U-shaped test error curve. However, recent empirical results with over-parameterized neural networks are marked by a striking absence of the classic U-shaped test error curve: test error keeps decreasing in wider networks. This suggests that there might not be a bias-variance tradeoff in neural networks with respect to network width, unlike was originally claimed by, e.g., Geman et al. (1992). Motivated by the shaky evidence used to support this claim in neural networks, we measure bias and variance in the modern setting. We find that both bias and variance can decrease as the number of parameters grows. To better understand this, we introduce a new decomposition of the variance to disentangle the effects of optimization and data sampling. We also provide theoretical analysis in a simplified setting that is consistent with our empirical findings."
 
 - date: 2026-07-19
   presenter: Example Presenter
