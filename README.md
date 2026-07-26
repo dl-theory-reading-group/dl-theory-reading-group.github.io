@@ -1,6 +1,6 @@
 # Deep Learning Theory Reading Group
 
-Website for a biweekly reading group on the theory of deep learning, built with
+Website for a weekly reading group on the theory of deep learning, built with
 [Jekyll](https://jekyllrb.com/) and the default **minima** theme, hosted on
 GitHub Pages.
 
