@@ -9,7 +9,7 @@ The **Deep Learning Theory Reading Group** is an informal seminar where, every
 other week, one participant presents one paper on the theory of deep learning.
 Presentations can cover the presenter's own work or a paper they find worth
 discussing. The emphasis is on understanding and open discussion rather than
-polished talks.
+polished talks. Talks are held in Persian for now.
 
 ## Scope
 
