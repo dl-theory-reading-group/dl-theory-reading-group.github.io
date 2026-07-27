@@ -29,8 +29,8 @@ header_pages:
   - about.md
 
 # --- Optional integrations (leave "" to hide them on the site) -----
-contact_email: ""          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
-mailing_list_url: ""       # e.g. https://groups.google.com/g/your-group
+contact_email: "dl-theory-reading-group@googlegroups.com"          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
+mailing_list_url: "https://groups.google.com/g/dl-theory-reading-group"       # e.g. https://groups.google.com/g/your-group
 youtube_playlist_url: "https://www.youtube.com/playlist?list=PLbvD9bdnxAes"
 meet_url: "https://meet.google.com/csa-sbkw-ctm"               # your recurring Google Meet link (see README / setup steps)
 calendar_embed_url: "https://calendar.google.com/calendar/embed?src=0fe4616e790575cc4fc5ed4c31d84c0188e5c7911ed0ad6fb2ca339b171b3f2f%40group.calendar.google.com&ctz=Europe%2FRome"     # full src URL from Google Calendar's "Embed code" (see steps)
