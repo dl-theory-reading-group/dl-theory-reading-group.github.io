@@ -32,7 +32,7 @@
   affiliation: Italian Institute of Technology
   title: "Generalization of Gibbs and Langevin Monte Carlo Algorithms in the Interpolation Regime"
   paper: https://arxiv.org/abs/2510.06028
-  authors: https://arxiv.org/abs/2510.06028
+  authors: Andreas Maurer, Erfan Mirzaei, Massimiliano Pontil
   slides: "assets/slides/PAC-Bayesian-S06.pdf"
   video: "https://youtu.be/ZG5iv-kHQx8"
   abstract: "Overparameterized neural networks can fit both meaningful data and random labels, often achieving essentially zero training error in both cases. This makes the final training error a poor predictor of generalization in the interpolation regime. In this talk, I will present a data-dependent view of this problem based on Gibbs posteriors and Langevin Monte Carlo algorithms using the PAC-Bayes framework. The key idea is to look not only at the final interpolating model but also at the entire temperature path: how quickly the expected training loss decreases as the inverse temperature increases. We show that, for the Gibbs posterior, the PAC-Bayes complexity term admits an exact integral representation as an area under this mean training-loss curve. This area separates true-label learning from random-label memorization and leads to quantitative bounds that track the observed test error in overparameterized neural networks."
