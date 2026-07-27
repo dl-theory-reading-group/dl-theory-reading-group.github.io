@@ -1,0 +1,12 @@
+{%- if site.organizers -%}
+<p>Organizers:
+{%- for organizer in site.organizers -%}
+  {%- if forloop.first == false -%}, {% else %} {% endif -%}
+  {%- if organizer.url -%}
+    <a href="{{ organizer.url }}">{{ organizer.name }}</a>
+  {%- else -%}
+    {{ organizer.name | default: organizer }}
+  {%- endif -%}
+{%- endfor -%}
+</p>
+{%- endif -%}

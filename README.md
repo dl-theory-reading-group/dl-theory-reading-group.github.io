@@ -38,7 +38,7 @@ point `slides:` at it. To host a poster, drop the image or PDF in
 Open `_config.yml` and set these (leave any of them `""` to hide that element):
 
 - `contact_email` — organizer / group email
-- `organizers` — names to show on the About page
+- `organizers` — names to show on the site; use `name` and `url` for hyperlinks
 - `mailing_list_url` — e.g. a Google Group for announcements
 - `youtube_playlist_url` — where recordings live
 - `calendar_embed_url` — the `src` URL from Google Calendar's *Embed code*

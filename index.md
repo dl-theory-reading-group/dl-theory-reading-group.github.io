@@ -18,13 +18,7 @@ Recordings live on [YouTube]({{ site.youtube_playlist_url }}).
 {% endif %}
 {% endif %}
 
-{% if site.organizers %}
-## Organizers
-
-{% for organizer in site.organizers %}
-- {{ organizer }}
-{% endfor %}
-{% endif %}
+{% include organizers.html %}
 
 {% if site.calendar_embed_url != blank %}
 <iframe src="{{ site.calendar_embed_url }}" style="border:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>

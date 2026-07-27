@@ -24,13 +24,7 @@ architectures and modern practice.
 - Interactive — questions throughout are encouraged.
 - Slides are optional; walking through the paper or the whiteboard is fine.
 
-{% if site.organizers %}
-## Organizers
-
-{% for organizer in site.organizers %}
-- {{ organizer }}
-{% endfor %}
-{% endif %}
+{% include organizers.html %}
 
 ## When &amp; where
 
