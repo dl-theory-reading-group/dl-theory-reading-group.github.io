@@ -8,11 +8,22 @@ presents one paper — their own work or someone else's — on the theory of dee
 learning, followed by open discussion. See the [About page](about.md) for the
 format and how to present.
 
-{% if site.mailing_list_url != blank %}
+{% if site.mailing_list_url != blank or site.youtube_playlist_url != blank %}
+{% if site.mailing_list_url != blank and site.youtube_playlist_url != blank %}
+Announcements go out on our [mailing list]({{ site.mailing_list_url }}), and recordings live on [YouTube]({{ site.youtube_playlist_url }}).
+{% elsif site.mailing_list_url != blank %}
 Announcements go out on our [mailing list]({{ site.mailing_list_url }}).
-{% endif %}
-{% if site.youtube_playlist_url != blank %}
+{% elsif site.youtube_playlist_url != blank %}
 Recordings live on [YouTube]({{ site.youtube_playlist_url }}).
+{% endif %}
+{% endif %}
+
+{% if site.organizers %}
+## Organizers
+
+{% for organizer in site.organizers %}
+- {{ organizer }}
+{% endfor %}
 {% endif %}
 
 {% if site.calendar_embed_url != blank %}
