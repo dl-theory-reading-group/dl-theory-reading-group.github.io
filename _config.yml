@@ -31,7 +31,7 @@ header_pages:
 # --- Optional integrations (leave "" to hide them on the site) -----
 organizers:
   - name: Erfan Mirzaei
-    url: https://erfanmirzaei.github.io
+    url: https://erfunmirzaei.github.io
   - name: Second Organizer
     url: https://example.com
 contact_email: "dl-theory-reading-group@googlegroups.com"          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
