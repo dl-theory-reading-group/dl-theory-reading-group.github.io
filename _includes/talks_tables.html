@@ -2,16 +2,16 @@
 {% assign today = site.time | date: "%Y%m%d" | plus: 0 %}
 <h2>Upcoming talks</h2>
 <table class="talks">
-<thead><tr><th>Date</th><th>Presenter</th><th>Paper</th><th>Slides</th><th>Video</th></tr></thead>
+<thead><tr><th>Date</th><th>Presenter</th><th>Paper</th><th>Poster</th><th>Slides</th><th>Video</th></tr></thead>
 <tbody>
 {% assign has_upcoming = false %}
 {% for talk in sorted %}{% assign ts = talk.date | date: "%Y%m%d" | plus: 0 %}{% if ts >= today %}{% assign has_upcoming = true %}{% include talk_row.html talk=talk %}{% endif %}{% endfor %}
-{% unless has_upcoming %}<tr><td colspan="5" class="talk-muted">Nothing scheduled yet — check back soon.</td></tr>{% endunless %}
+{% unless has_upcoming %}<tr><td colspan="6" class="talk-muted">Nothing scheduled yet — check back soon.</td></tr>{% endunless %}
 </tbody>
 </table>
 <h2>Past talks</h2>
 <table class="talks">
-<thead><tr><th>Date</th><th>Presenter</th><th>Paper</th><th>Slides</th><th>Video</th></tr></thead>
+<thead><tr><th>Date</th><th>Presenter</th><th>Paper</th><th>Poster</th><th>Slides</th><th>Video</th></tr></thead>
 <tbody>
 {% assign sorted_desc = sorted | reverse %}
 {% for talk in sorted_desc %}{% assign ts = talk.date | date: "%Y%m%d" | plus: 0 %}{% if ts < today %}{% include talk_row.html talk=talk %}{% endif %}{% endfor %}

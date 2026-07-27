@@ -24,6 +24,14 @@ architectures and modern practice.
 - Interactive — questions throughout are encouraged.
 - Slides are optional; walking through the paper or the whiteboard is fine.
 
+{% if site.organizers %}
+## Organizers
+
+{% for organizer in site.organizers %}
+- {{ organizer }}
+{% endfor %}
+{% endif %}
+
 ## When &amp; where
 
 **Every Sunday, 7:00&nbsp;pm Tehran time** (UTC+3:30; Iran no longer observes DST,

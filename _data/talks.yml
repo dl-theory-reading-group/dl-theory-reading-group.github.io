@@ -10,6 +10,7 @@
 #    title        (required)  paper title
 #    paper        (optional)  URL to the paper (arXiv, OpenReview, ...)
 #    authors      (optional)  paper authors (esp. if presenting others' work)
+#    poster       (optional)  URL, or local path like /assets/posters/2026-08-05.png
 #    slides       (optional)  URL, or local path like /assets/slides/2026-08-05.pdf
 #    video        (optional)  YouTube (or other) URL
 #    abstract     (optional)  one or two sentences
@@ -23,6 +24,7 @@
   title: "A Modern Take on the Bias-Variance Tradeoff in Neural Networks"
   paper: https://arxiv.org/abs/1810.08591 
   authors: Brady Neal, Sarthak Mittal, Aristide Baratin, Vinayak Tantia, Matthew Scicluna, Simon Lacoste-Julien, Ioannis Mitliagkas
+  poster: ""
   slides: ""
   video: ""
   abstract: "The bias-variance tradeoff tells us that as model complexity increases, bias falls and variances increases, leading to a U-shaped test error curve. However, recent empirical results with over-parameterized neural networks are marked by a striking absence of the classic U-shaped test error curve: test error keeps decreasing in wider networks. This suggests that there might not be a bias-variance tradeoff in neural networks with respect to network width, unlike was originally claimed by, e.g., Geman et al. (1992). Motivated by the shaky evidence used to support this claim in neural networks, we measure bias and variance in the modern setting. We find that both bias and variance can decrease as the number of parameters grows. To better understand this, we introduce a new decomposition of the variance to disentangle the effects of optimization and data sampling. We also provide theoretical analysis in a simplified setting that is consistent with our empirical findings."
@@ -33,6 +35,7 @@
   title: "Generalization of Gibbs and Langevin Monte Carlo Algorithms in the Interpolation Regime"
   paper: https://arxiv.org/abs/2510.06028
   authors: Andreas Maurer, Erfan Mirzaei, Massimiliano Pontil
+  poster: ""
   slides: "assets/slides/PAC-Bayesian-S06.pdf"
   video: "https://youtu.be/ZG5iv-kHQx8"
   abstract: "Overparameterized neural networks can fit both meaningful data and random labels, often achieving essentially zero training error in both cases. This makes the final training error a poor predictor of generalization in the interpolation regime. In this talk, I will present a data-dependent view of this problem based on Gibbs posteriors and Langevin Monte Carlo algorithms using the PAC-Bayes framework. The key idea is to look not only at the final interpolating model but also at the entire temperature path: how quickly the expected training loss decreases as the inverse temperature increases. We show that, for the Gibbs posterior, the PAC-Bayes complexity term admits an exact integral representation as an area under this mean training-loss curve. This area separates true-label learning from random-label memorization and leads to quantitative bounds that track the observed test error in overparameterized neural networks."

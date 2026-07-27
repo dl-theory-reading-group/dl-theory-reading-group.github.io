@@ -18,6 +18,7 @@ file for all available fields):
   title: "A Great Paper Title"
   paper: https://arxiv.org/abs/xxxx.xxxxx
   authors: Doe, Smith
+  poster: /assets/posters/2026-08-19.png  # optional
   slides: /assets/slides/2026-08-19.pdf   # optional
   video: https://youtu.be/XXXXXXX         # optional
   abstract: "One or two sentences."       # optional
@@ -25,7 +26,8 @@ file for all available fields):
 
 The site sorts by `date` and splits entries into **Upcoming** and **Past**
 automatically. To host slides in the repo, drop the PDF in `assets/slides/` and
-point `slides:` at it.
+point `slides:` at it. To host a poster, drop the image or PDF in
+`assets/posters/` and point `poster:` at it.
 
 > Note: GitHub Pages only rebuilds when you push, so a talk moves from
 > "Upcoming" to "Past" on the next push after its date (not automatically at
@@ -36,6 +38,7 @@ point `slides:` at it.
 Open `_config.yml` and set these (leave any of them `""` to hide that element):
 
 - `contact_email` — organizer / group email
+- `organizers` — names to show on the About page
 - `mailing_list_url` — e.g. a Google Group for announcements
 - `youtube_playlist_url` — where recordings live
 - `calendar_embed_url` — the `src` URL from Google Calendar's *Embed code*
