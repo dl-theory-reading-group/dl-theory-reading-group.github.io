@@ -32,8 +32,11 @@ header_pages:
 organizers:
   - name: Erfan Mirzaei
     url: https://erfunmirzaei.github.io
-  - name: Second Organizer
-    url: https://example.com
+  - name: Hosein Rahnama
+    url: https://www.linkedin.com/in/hosein-rahnama
+  - name: Erfan Sobhaei
+    url: https://www.linkedin.com/in/erfansobhaei
+
 contact_email: "dl-theory-reading-group@googlegroups.com"          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
 mailing_list_url: "https://groups.google.com/g/dl-theory-reading-group"       # e.g. https://groups.google.com/g/your-group
 youtube_playlist_url: "https://www.youtube.com/playlist?list=PLbvD9bdnxAes"
