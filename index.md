@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Deep Learning Theory Reading Group
+title: Learning Theory Circle
 ---
 
 We meet **every Sunday at 7:00&nbsp;pm Tehran time**. Each session, one person
-presents one paper — their own work or someone else's — on the theory of deep
+presents one paper — their own work or someone else's — on the theory of
 learning, followed by open discussion. The talks and recordings are in Persian for now.
 See the [About page](about.md) for the format and how to present.
 

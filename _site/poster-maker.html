@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DL Theory RG — Poster maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root{
+    --ink:#0F1E38; --ink-2:#13294B; --paper:#EAF0FA; --muted:#8CA3C7;
+    --line:#6FA8D6; --accent:#E8B24C; --app-bg:#e9ecf1; --panel:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--app-bg); color:#1b2330;
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    display:flex; gap:32px; padding:32px; align-items:flex-start; flex-wrap:wrap;
+    justify-content:center; min-height:100vh;
+  }
+
+  /* ---------- Controls ---------- */
+  .panel{
+    width:340px; background:var(--panel); border-radius:14px; padding:22px 22px 26px;
+    box-shadow:0 1px 3px rgba(16,30,60,.08),0 12px 32px rgba(16,30,60,.08);
+    position:sticky; top:32px;
+  }
+  .panel h1{font:600 17px/1.2 "Space Grotesk"; margin:0 0 4px}
+  .panel p.hint{font:400 13px/1.5 "IBM Plex Mono"; color:#5a687f; margin:0 0 18px}
+  .field{margin-bottom:14px}
+  .field label{display:block; font:600 11px/1 "IBM Plex Mono"; letter-spacing:.09em;
+    text-transform:uppercase; color:#6a788f; margin-bottom:6px}
+  .field input,.field textarea{
+    width:100%; border:1px solid #d6dce6; border-radius:8px; padding:9px 11px;
+    font:500 14px/1.35 "Space Grotesk"; color:#1b2330; background:#fbfcfe; resize:vertical;
+  }
+  .field input:focus,.field textarea:focus{outline:2px solid #b9d0ea; border-color:#8fb4dd}
+  .row{display:flex; gap:12px}
+  .row .field{flex:1}
+  button#dl{
+    width:100%; margin-top:8px; border:0; border-radius:9px; cursor:pointer;
+    background:var(--ink); color:#fff; padding:13px; font:600 15px "Space Grotesk";
+  }
+  button#dl:hover{background:#16294a}
+  button#dl:active{transform:translateY(1px)}
+
+  /* ---------- Stage / poster ---------- */
+  .stage{transform-origin:top left}
+  .poster{
+    width:1080px; height:1350px; background:
+      radial-gradient(120% 90% at 82% 108%, var(--ink-2) 0%, var(--ink) 58%);
+    color:var(--paper); position:relative; overflow:hidden;
+    padding:88px 84px 76px; display:flex; flex-direction:column;
+  }
+  .poster__art{position:absolute; inset:auto 0 0 0; width:100%; height:640px; opacity:.55; pointer-events:none}
+  .poster__eyebrow{
+    font:600 24px/1 "IBM Plex Mono"; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--line); display:flex; align-items:center; gap:14px;
+  }
+  .poster__eyebrow::before{content:""; width:14px; height:14px; background:var(--accent);
+    transform:rotate(45deg); display:inline-block}
+  .poster__speaker{font:600 62px/1.05 "Space Grotesk"; margin:56px 0 8px; letter-spacing:-.01em}
+  .poster__aff{font:500 26px/1.3 "IBM Plex Mono"; color:var(--muted)}
+  .poster__rule{width:120px; height:4px; background:var(--accent); margin:34px 0 30px; border:0}
+  .poster__title{
+    font:400 62px/1.08 "Fraunces"; letter-spacing:-.005em; color:#fff;
+    margin:0; max-height:300px; overflow:hidden;
+  }
+  .poster__authors{font:500 23px/1.4 "IBM Plex Mono"; color:var(--muted); margin:26px 0 0}
+  .poster__abstract{
+    font:400 22px/1.45 "Space Grotesk"; color:#C7D6EC; margin:24px 0 0; max-width:840px;
+    display:-webkit-box; -webkit-line-clamp:12; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .poster__spacer{flex:1 1 auto; min-height:40px}
+  .poster__when{display:flex; align-items:center; gap:20px; position:relative; z-index:2}
+  .poster__chip{
+    background:var(--accent); color:#1a1400; font:600 25px/1 "IBM Plex Mono";
+    letter-spacing:.01em; padding:16px 20px; border-radius:10px; white-space:nowrap;
+  }
+  .poster__where{font:500 26px/1.25 "Space Grotesk"; color:var(--paper)}
+  .poster__where b{color:#fff; font-weight:600}
+  .poster__foot{
+    margin-top:36px; padding-top:24px; border-top:1px solid rgba(111,168,214,.28);
+    display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2;
+  }
+  .poster__foot-left{display:flex; flex-direction:column; gap:13px}
+  .poster__site{font:500 22px/1 "IBM Plex Mono"; letter-spacing:.04em; color:var(--muted)}
+  .poster__tg{display:flex; align-items:center; gap:11px; font:600 24px/1 "IBM Plex Mono"; color:#37AEE2}
+  .poster__tg .tg-ic{flex:none}
+  .poster__utc{font:500 22px/1 "IBM Plex Mono"; letter-spacing:.04em; color:var(--muted); align-self:flex-end}
+  @media (max-width:520px){ .panel{position:static; width:100%} }
+</style>
+</head>
+<body>
+
+  <div class="panel">
+    <h1>Talk poster</h1>
+    <p class="hint">Edit the fields, then download. Reuse each week by changing the text.</p>
+
+    <div class="field"><label>Speaker</label><input id="f-speaker" value="Erfan Sobhaei"></div>
+    <div class="field"><label>Affiliation</label><input id="f-aff" value="Sharif University of Technology"></div>
+    <div class="field"><label>Paper title</label><textarea id="f-title" rows="3">A Modern Take on the Bias-Variance Tradeoff in Neural Networks</textarea></div>
+    <div class="field"><label>Authors (optional)</label><input id="f-authors" value=""></div>
+    <div class="field"><label>Abstract</label><textarea id="f-abstract" rows="4">A brief, self-contained look at how modern overparameterized networks complicate the classical bias–variance picture — and what that means for generalization.</textarea></div>
+    <div class="row">
+      <div class="field"><label>Date</label><input id="f-date" value="Sunday · Aug 2"></div>
+      <div class="field"><label>Time</label><input id="f-time" value="7:00 PM Tehran"></div>
+    </div>
+    <div class="field"><label>Where</label><input id="f-where" value="Live on Google Meet"></div>
+    <div class="field"><label>Footer / URL</label><input id="f-url" value="learning-theory-circle.github.io"></div>
+    <div class="field"><label>Telegram channel</label><input id="f-tg" value="@SingularThinker"></div>
+
+    <button id="dl">Download PNG</button>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="poster" id="poster">
+      <div class="poster__eyebrow">DL Theory&nbsp;·&nbsp;Reading Group</div>
+
+      <div class="poster__speaker" id="p-speaker">Erfan Sobhaei</div>
+      <div class="poster__aff" id="p-aff">Sharif University of Technology</div>
+
+      <hr class="poster__rule">
+
+      <h2 class="poster__title" id="p-title">A Modern Take on the Bias-Variance Tradeoff in Neural Networks</h2>
+      <p class="poster__authors" id="p-authors"></p>
+      <p class="poster__abstract" id="p-abstract">A brief, self-contained look at how modern overparameterized networks complicate the classical bias–variance picture — and what that means for generalization.</p>
+
+      <div class="poster__spacer"></div>
+
+      <!-- signature: loss-landscape contours + gradient-descent path -->
+      <svg class="poster__art" viewBox="0 0 1080 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <g fill="none" stroke="#6FA8D6" stroke-width="1.4">
+          <path d="M120 560 C 260 300, 820 300, 960 560" opacity=".22"/>
+          <path d="M180 560 C 300 360, 780 360, 900 560" opacity=".30"/>
+          <path d="M240 560 C 340 410, 740 410, 840 560" opacity=".38"/>
+          <path d="M300 560 C 380 452, 700 452, 780 560" opacity=".48"/>
+          <path d="M360 560 C 420 490, 660 490, 720 560" opacity=".58"/>
+          <path d="M420 560 C 458 520, 622 520, 660 560" opacity=".70"/>
+        </g>
+        <polyline points="150,150 300,250 430,360 505,452 542,516"
+          fill="none" stroke="#E8B24C" stroke-width="2.6" stroke-linejoin="round" opacity=".9"/>
+        <g fill="#EAF0FA">
+          <circle cx="150" cy="150" r="6"/><circle cx="300" cy="250" r="6"/>
+          <circle cx="430" cy="360" r="6"/><circle cx="505" cy="452" r="6"/>
+        </g>
+        <circle cx="542" cy="516" r="10" fill="#E8B24C"/>
+      </svg>
+
+      <div class="poster__when">
+        <span class="poster__chip"><span id="p-date">Sunday · Aug 2</span> · <span id="p-time">7:00 PM Tehran</span></span>
+        <span class="poster__where" id="p-where">Live on Google Meet</span>
+      </div>
+
+      <div class="poster__foot">
+        <div class="poster__foot-left">
+          <span class="poster__site" id="p-url">learning-theory-circle.github.io</span>
+          <span class="poster__tg">
+            <svg class="tg-ic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+              <circle cx="12" cy="12" r="12" fill="#37AEE2"/>
+              <path fill="#fff" d="M5.6 11.7 17.1 7.3c.55-.2 1.03.13.85.83l-1.96 9.24c-.13.62-.5.77-1.02.48l-2.86-2.11-1.38 1.33c-.15.15-.28.28-.58.28l.2-2.93 5.35-4.84c.23-.2-.05-.32-.36-.12l-6.6 4.16-2.85-.89c-.62-.19-.63-.62.13-.92z"/>
+            </svg>
+            <span id="p-tg">@SingularThinker</span>
+          </span>
+        </div>
+        <span class="poster__utc">UTC+3:30</span>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const bind = [
+    ["f-speaker","p-speaker"],["f-aff","p-aff"],["f-title","p-title"],
+    ["f-authors","p-authors"],["f-abstract","p-abstract"],["f-date","p-date"],
+    ["f-time","p-time"],["f-where","p-where"],["f-url","p-url"],["f-tg","p-tg"],
+  ];
+  const $ = id => document.getElementById(id);
+
+  // Auto-shrink the title so long paper names still fit.
+  function fitTitle(){
+    const el = $("p-title"), max = 300, base = 62, min = 30;
+    el.style.fontSize = base + "px";
+    let s = base;
+    while (el.scrollHeight > max && s > min){ s -= 2; el.style.fontSize = s + "px"; }
+  }
+  // Safeguard: only if the poster would overflow, step the abstract down a size.
+  function fitAbstract(){
+    const el = $("p-abstract"), poster = $("poster"), base = 22, min = 15;
+    let s = base, guard = 0;
+    el.style.fontSize = s + "px";
+    while (poster.scrollHeight > poster.clientHeight && s > min && guard < 40){
+      s -= 1; el.style.fontSize = s + "px"; guard++;
+    }
+  }
+  function fitAll(){ fitTitle(); fitAbstract(); }
+  // Hide the authors line entirely when empty.
+  function syncAuthors(){
+    const v = $("f-authors").value.trim();
+    $("p-authors").style.display = v ? "" : "none";
+  }
+
+  bind.forEach(([f,p]) => {
+    $(f).addEventListener("input", e => {
+      $(p).textContent = e.target.value;
+      if (f === "f-authors") syncAuthors();
+      fitAll();
+    });
+  });
+
+  // Scale the on-screen preview to fit narrow windows (export stays full-res).
+  const stage = $("stage");
+  function fitStage(){
+    const avail = Math.min(window.innerWidth - 340 - 96, 1080);
+    const scale = Math.max(0.25, Math.min(1, avail / 1080));
+    stage.style.transform = "scale(" + scale + ")";
+    stage.style.width = (1080 * scale) + "px";
+    stage.style.height = (1350 * scale) + "px";
+  }
+  window.addEventListener("resize", fitStage);
+
+  function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40); }
+
+  $("dl").addEventListener("click", async () => {
+    const btn = $("dl"); btn.textContent = "Rendering…"; btn.disabled = true;
+    const prevTransform = stage.style.transform, prevW = stage.style.width, prevH = stage.style.height;
+    stage.style.transform = "none"; stage.style.width = "1080px"; stage.style.height = "1350px";
+    try{
+      await document.fonts.ready;
+      const canvas = await html2canvas($("poster"), {scale:2, backgroundColor:"#0F1E38", useCORS:true});
+      const a = document.createElement("a");
+      a.download = "dltrg-" + (slug($("f-date").value)||"talk") + "-" + (slug($("f-speaker").value)||"speaker") + ".png";
+      a.href = canvas.toDataURL("image/png");
+      a.click();
+    }catch(err){ alert("Export failed: " + err.message); }
+    stage.style.transform = prevTransform; stage.style.width = prevW; stage.style.height = prevH;
+    btn.textContent = "Download PNG"; btn.disabled = false;
+  });
+
+  document.fonts.ready.then(fitAll);
+  fitStage(); syncAuthors(); fitAll();
+</script>
+</body>
+</html>

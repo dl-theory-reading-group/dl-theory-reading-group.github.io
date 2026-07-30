@@ -1,6 +1,6 @@
-# Deep Learning Theory Reading Group
+# Learning Theory Circle
 
-Website for a weekly reading group on the theory of deep learning, built with
+Website for a weekly reading group on the theory of learning, built with
 [Jekyll](https://jekyllrb.com/) and the default **minima** theme, hosted on
 GitHub Pages.
 
@@ -75,14 +75,14 @@ Open <http://localhost:4000>.
 ## Deploy on GitHub Pages
 
 **Option A — dedicated site (recommended):** create an org or account named
-`dl-theory-reading-group`, put this in a repo named
-`dl-theory-reading-group.github.io`, push to `main`. It serves at
-`https://dl-theory-reading-group.github.io`. Keep `baseurl: ""` in `_config.yml`.
+`learning-theory-circle`, put this in a repo named
+`learning-theory-circle.github.io`, push to `main`. It serves at
+`https://learning-theory-circle.github.io`. Keep `baseurl: ""` in `_config.yml`.
 
 **Option B — project repo under your account:** create a repo named
-`dl-theory-reading-group`, push to `main`. In `_config.yml` set
-`baseurl: "/dl-theory-reading-group"` and `url` to `https://<username>.github.io`.
-It serves at `https://<username>.github.io/dl-theory-reading-group`.
+`learning-theory-circle`, push to `main`. In `_config.yml` set
+`baseurl: "/learning-theory-circle"` and `url` to `https://<username>.github.io`.
+It serves at `https://<username>.github.io/learning-theory-circle`.
 
 Either way: in the repo, go to **Settings → Pages → Build and deployment →
 Deploy from a branch**, choose `main` and `/ (root)`, and save.
