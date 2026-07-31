@@ -1,5 +1,6 @@
 ---
 layout: page
+nav_title: Home
 title: Learning Theory Circle
 ---
 
@@ -9,4 +10,4 @@ We meet **every two weeks on Sunday at 7:00&nbsp;pm Tehran time**. Each session,
 <iframe src="{{ site.calendar_embed_url }}" style="border:0; margin-bottom: 25px" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
 {% endif %}
 
-{% include talks_tables.html %}
+{% include talks-tables.html %}

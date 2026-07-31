@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/logo/logo-with-name.svg' | relative_url }}" alt="{{ site.title }}" style="height:40px;">
+    </a>
+
+    <nav class="site-nav">
+      <!-- Hamburger toggle -->
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h18v3H0zM0 6h18v3H0zM0 12h18v3H0z"/>
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger">
+        {%- for page in site.pages -%}
+          {%- if page.title and page.nav_exclude != true -%}
+            <a class="page-link" href="{{ page.url | relative_url }}">
+              {{ page.nav_title | default: page.title }}
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
+  </div>
+</header>
