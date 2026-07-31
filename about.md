@@ -11,7 +11,7 @@ The **Learning Theory Circle** is an informal seminar where one participant pres
 
 ## Scope
 
-Topics include (but are not limited to): optimization and training dynamics, generalization, implicit bias, the neural tangent kernel and infinite-width limits, approximation and expressivity, loss landscapes, and the theory behind architectures and modern practice.
+Topics include, but are not limited to, optimization and training dynamics, generalization, implicit bias, the neural tangent kernel and infinite-width limits, approximation and expressivity, loss landscapes, and the theory behind architectures and modern practice.
 
 
 ## Format
@@ -23,17 +23,17 @@ Topics include (but are not limited to): optimization and training dynamics, gen
 
 ## When and Where
 
-**Every two weeks on Sunday, 7:00&nbsp;pm Tehran time** (UTC+3:30; Iran no longer observes DST, so this is 15:30&nbsp;UTC year-round). 
-{% if site.meet_url != blank %} We meet on [Google Meet]({{ site.meet_url }}). {% else %}
+**Every two weeks on Sunday, 7:00&nbsp;pm Tehran time**, or equivalently UTC+3:30, 
+{% if site.meet_url != blank %} we meet on [Google Meet]({{ site.meet_url }}). {% else %}
 *(Add your recurring Google Meet link as `meet_url` in `_config.yml`.)*
-{% endif %} {% if site.calendar_embed_url != blank %} Add the meetings to your own calendar:
+{% endif %} {% if site.calendar_embed_url != blank %} Add the meetings to your own calendar from below.
 <iframe src="{{ site.calendar_embed_url }}" style="border:0; margin-bottom: 25px" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
 {% endif %}
 
 
 ## Present a Paper
 
-Everyone is welcome to present. Two ways to sign up:
+Everyone is welcome to present. There are two ways to sign up:
 
 1. **Open a pull request** adding an entry to `_data/talks.yml` (see the file for the format), or
 2. {% if site.contact_email != blank %}Email us at [{{ site.contact_email }}](mailto:{{ site.contact_email }}).{% else %}Email the organizers *(add a contact address in `_config.yml`)*.{% endif %}
