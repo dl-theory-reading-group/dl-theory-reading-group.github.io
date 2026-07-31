@@ -4,8 +4,7 @@
 
 title: Learning Theory Circle
 description: >-
-  A weekly reading group where one person presents one paper on the
-  theory of learning.
+  A community of students and researchers who share a passion for the theory of learning.
 
 # --- URL / hosting -------------------------------------------------
 # Case A (recommended): dedicated user/org site served at
@@ -22,7 +21,7 @@ url: "https://learning-theory-circle.github.io"
 # --- Theme ---------------------------------------------------------
 theme: minima
 minima:
-  skin: classic          # options: classic, dark, auto, solarized, solarized-dark
+  skin: classic    # options: classic, dark, auto, solarized, solarized-dark
 
 # --- Top navigation ------------------------------------------------
 header_pages:
@@ -37,10 +36,10 @@ organizers:
   - name: Erfan Sobhaei
     url: https://www.linkedin.com/in/erfansobhaei
 
-contact_email: "learning-theory-circle@googlegroups.com"          # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
-mailing_list_url: "https://groups.google.com/g/learning-theory-circle"       # e.g. https://groups.google.com/g/your-group
+contact_email: "learning-theory-circle@googlegroups.com"                       # e.g. dl-theory-rg@googlegroups.com  (add if you want one)
+mailing_list_url: "https://groups.google.com/g/learning-theory-circle"         # e.g. https://groups.google.com/g/your-group
 youtube_playlist_url: "https://www.youtube.com/playlist?list=PLbvD9bdnxAes"
-meet_url: "https://meet.google.com/csa-sbkw-ctm"               # your recurring Google Meet link (see README / setup steps)
+meet_url: "https://meet.google.com/csa-sbkw-ctm"                               # your recurring Google Meet link (see README / setup steps)
 calendar_embed_url: "https://calendar.google.com/calendar/embed?src=0fe4616e790575cc4fc5ed4c31d84c0188e5c7911ed0ad6fb2ca339b171b3f2f%40group.calendar.google.com&ctz=Europe%2FRome"     # full src URL from Google Calendar's "Embed code" (see steps)
 
 # --- Build ---------------------------------------------------------

@@ -1,15 +1,11 @@
 # Learning Theory Circle
 
-Website for a weekly reading group on the theory of learning, built with
-[Jekyll](https://jekyllrb.com/) and the default **minima** theme, hosted on
-GitHub Pages.
+Website for a biweekly event on the theory of learning, built with [Jekyll](https://jekyllrb.com/) and the default **minima** theme, hosted on GitHub Pages.
 
----
 
 ## Add a talk
 
-Edit **`_data/talks.yml`** and add one entry (see the comments at the top of that
-file for all available fields):
+Edit **`_data/talks.yml`** and add one entry (see the comments at the top of that file for all available fields):
 
 ```yaml
 - date: 2026-08-19
@@ -24,14 +20,11 @@ file for all available fields):
   abstract: "One or two sentences."       # optional
 ```
 
-The site sorts by `date` and splits entries into **Upcoming** and **Past**
-automatically. To host slides in the repo, drop the PDF in `assets/slides/` and
-point `slides:` at it. To host a poster, drop the image or PDF in
-`assets/posters/` and point `poster:` at it.
+The site sorts by `date` and splits entries into **Upcoming** and **Past** automatically. To host slides in the repo, drop the PDF in `assets/slides/` and point `slides:` at it. To host a poster, drop the image or PDF in `assets/posters/` and point `poster:` at it.
 
 > Note: GitHub Pages only rebuilds when you push, so a talk moves from
-> "Upcoming" to "Past" on the next push after its date (not automatically at
-> midnight).
+> "Upcoming" to "Past" on the next push after its date (not automatically at midnight).
+
 
 ## Fill in before launch
 
@@ -43,27 +36,23 @@ Open `_config.yml` and set these (leave any of them `""` to hide that element):
 - `youtube_playlist_url` — where recordings live
 - `calendar_embed_url` — the `src` URL from Google Calendar's *Embed code*
 
-Then edit **`about.md`** to set the day/time/timezone and location, and replace
-the placeholder talks in `_data/talks.yml`.
+Then edit **`about.md`** to set the day/time/timezone and location, and replace the placeholder talks in `_data/talks.yml`.
+
 
 ## Set up the Google Calendar + Meet link
 
-1. In [Google Calendar](https://calendar.google.com), create a new calendar
-   (left sidebar → **Other calendars → +** → *Create new calendar*), e.g.
-   "DL Theory Reading Group".
-2. Create the weekly event: title it, set **Sunday 7:00 pm**, timezone
-   **(GMT+3:30) Tehran**, and under *Does not repeat* choose **Weekly on Sunday**.
-   Click **Add Google Meet video conferencing** — a recurring event keeps the
-   **same Meet link** every week. Copy that link into `meet_url` in `_config.yml`.
-3. Make the calendar public so visitors can see it: calendar **Settings →
-   Access permissions → Make available to public**.
-4. Get the embed URL: calendar **Settings → Integrate calendar → Embed code**.
-   Copy the `src="..."` value into `calendar_embed_url` in `_config.yml`. To force
-   Tehran time for all viewers, make sure the URL ends with `&ctz=Asia/Tehran`.
+1. In [Google Calendar](https://calendar.google.com), create a new calendar (left sidebar → **Other calendars → +** → *Create new calendar*), e.g. "Learning Theory Circle".
+
+2. Create a biweekly event: title it, set **Sunday 7:00 pm**, timezone **(GMT+3:30) Tehran**, and under *Does not repeat* choose *custom* and set repeat every two weeks. Click **Add Google Meet video conferencing** — a recurring event keeps the **same Meet link** every two weeks. Copy that link into `meet_url` in `_config.yml`.
+
+3. Make the calendar public so visitors can see it: calendar **Settings → Access permissions → Make available to public**.
+
+4. Get the embed URL: calendar **Settings → Integrate calendar → Embed code**. Copy the `src="..."` value into `calendar_embed_url` in `_config.yml`. To force Tehran time for all viewers, make sure the URL ends with `&ctz=Asia/Tehran`.
+
 
 ## Run locally
 
-Requires Ruby and Bundler.
+Requires `ruby` and `bundler`.
 
 ```bash
 bundle install
@@ -72,17 +61,11 @@ bundle exec jekyll serve
 
 Open <http://localhost:4000>.
 
+
 ## Deploy on GitHub Pages
 
-**Option A — dedicated site (recommended):** create an org or account named
-`learning-theory-circle`, put this in a repo named
-`learning-theory-circle.github.io`, push to `main`. It serves at
-`https://learning-theory-circle.github.io`. Keep `baseurl: ""` in `_config.yml`.
+**Option A — dedicated site (recommended):** create an org or account named `learning-theory-circle`, put this in a repo named `learning-theory-circle.github.io`, push to `main`. It serves at `https://learning-theory-circle.github.io`. Keep `baseurl: ""` in `_config.yml`.
 
-**Option B — project repo under your account:** create a repo named
-`learning-theory-circle`, push to `main`. In `_config.yml` set
-`baseurl: "/learning-theory-circle"` and `url` to `https://<username>.github.io`.
-It serves at `https://<username>.github.io/learning-theory-circle`.
+**Option B — project repo under your account:** create a repo named `learning-theory-circle`, push to `main`. In `_config.yml` set `baseurl: "/learning-theory-circle"` and `url` to `https://<username>.github.io`. It serves at `https://<username>.github.io/learning-theory-circle`.
 
-Either way: in the repo, go to **Settings → Pages → Build and deployment →
-Deploy from a branch**, choose `main` and `/ (root)`, and save.
+Either way: in the repo, go to **Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/ (root)`, and save.
