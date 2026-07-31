@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# Use these ruby versions.
+ruby ">= 3.2", "< 4.0"
+
 # Matches GitHub Pages' build environment (includes Jekyll, minima, jekyll-feed).
 gem "github-pages", group: :jekyll_plugins
 

@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: home
+permalink: /
 nav_title: Home
 title: Learning Theory Circle
 ---

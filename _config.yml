@@ -54,3 +54,8 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
