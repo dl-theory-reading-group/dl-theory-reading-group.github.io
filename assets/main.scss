@@ -4,11 +4,12 @@
 
 @import "minima";
 
-/* Minimal styling for the talks tables — kept light to match the plain theme. */
+/* Minimal styling for the talks tables. */
+
 .talks {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .talks th,
@@ -33,4 +34,52 @@
 .talk-muted {
   color: #828282;
   font-size: 0.9em;
+}
+
+/* Footer styling */
+
+.site-footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 1em 0;
+  font-size: 0.9em;
+  color: #777;
+
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-title {
+    margin: 0;
+    text-align: left;
+    flex: 1;
+  }
+
+  .footer-description {
+    margin: 0;
+    text-align: left;
+    flex: 0 0 50%;
+  }
+}
+
+/* Responsive tweak, stack vertically on narrow screens. */
+
+@media (max-width: 600px) {
+  .site-footer .footer-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+    align-items: center;
+  }
+
+  .site-footer .footer-description {
+    flex: unset;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.page-content h2 {
+  font-size: 1.5em; /* match Minima’s h2 */
 }
