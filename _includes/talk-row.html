@@ -2,10 +2,8 @@
 <tr>
   <td class="talk-date">{{ t.date | date: "%b %-d, %Y" }}</td>
   <td>{{ t.presenter }}</td>
-  <td>
-    {% if t.paper != blank %}<a href="{{ t.paper }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}
-  </td>
-  <td>{% if t.poster != blank %}{% if t.poster contains "http" %}<a href="{{ t.poster }}">poster</a>{% else %}<a href="{{ t.poster | relative_url }}">poster</a>{% endif %}{% else %}&mdash;{% endif %}</td>
-  <td>{% if t.slides != blank %}{% if t.slides contains "http" %}<a href="{{ t.slides }}">slides</a>{% else %}<a href="{{ t.slides | relative_url }}">slides</a>{% endif %}{% else %}&mdash;{% endif %}</td>
-  <td>{% if t.video != blank %}<a href="{{ t.video }}">video</a>{% else %}&mdash;{% endif %}</td>
+  <td>{% if t.paper != blank %}<a href="{{ t.paper }}">{{ t.title }}</a>{% else %}{{ t.title }}none{% endif %}</td>
+  <td>{% if t.poster %}<a href="{{ t.poster }}">poster</a>{% else %}none{% endif %}</td>
+  <td>{% if t.slides %}<a href="{{ t.slides }}">slides</a>{% else %}none{% endif %}</td>
+  <td>{% if t.video %}<a href="{{ t.video }}">video</a>{% else %}none{% endif %}</td>
 </tr>
