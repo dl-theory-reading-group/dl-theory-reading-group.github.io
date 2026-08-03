@@ -60,12 +60,3 @@ bundle exec jekyll serve
 ```
 
 Open <http://localhost:4000>.
-
-
-## Deploy on GitHub Pages
-
-**Option A — dedicated site (recommended):** create an org or account named `learning-theory-circle`, put this in a repo named `learning-theory-circle.github.io`, push to `main`. It serves at `https://learning-theory-circle.github.io`. Keep `baseurl: ""` in `_config.yml`.
-
-**Option B — project repo under your account:** create a repo named `learning-theory-circle`, push to `main`. In `_config.yml` set `baseurl: "/learning-theory-circle"` and `url` to `https://<username>.github.io`. It serves at `https://<username>.github.io/learning-theory-circle`.
-
-Either way: in the repo, go to **Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/ (root)`, and save.

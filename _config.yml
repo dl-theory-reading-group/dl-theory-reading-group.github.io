@@ -42,7 +42,7 @@ contact_email: "learning-theory-circle@googlegroups.com"
 mailing_list_url: "https://groups.google.com/g/learning-theory-circle"
 youtube_playlist_url: "https://www.youtube.com/playlist?list=PLbvD9bdnxAes"
 meet_url: "https://meet.google.com/csa-sbkw-ctm"
-calendar_embed_url: "https://calendar.google.com/calendar/embed?src=0fe4616e790575cc4fc5ed4c31d84c0188e5c7911ed0ad6fb2ca339b171b3f2f%40group.calendar.google.com&ctz=Europe%2FRome"     # full src URL from Google Calendar's "Embed code" (see steps)
+google_calendar_url: "https://calendar.google.com/calendar/u/0/r?cid=0fe4616e790575cc4fc5ed4c31d84c0188e5c7911ed0ad6fb2ca339b171b3f2f@group.calendar.google.com"
 github_url: https://github.com/learning-theory-circle/learning-theory-circle.github.io
 
 # --- Build ---------------------------------------------------------

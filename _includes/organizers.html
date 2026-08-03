@@ -1,5 +1,4 @@
 {%- if site.organizers -%}
-<p>
 {%- for organizer in site.organizers -%}
   {%- if forloop.first == false -%}, {% else %} {% endif -%}
   {%- if organizer.url -%}
@@ -8,5 +7,4 @@
     {{ organizer.name | default: organizer }}
   {%- endif -%}
 {%- endfor -%}
-</p>
 {%- endif -%}
