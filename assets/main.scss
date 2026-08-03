@@ -4,41 +4,55 @@
 
 @import "minima";
 
-/* Minimal styling for the talks tables. */
+/* Style for talks */
 
-.talks {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
+.talk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
 }
 
-.talks th,
-.talks td {
-  text-align: left;
-  padding: 0.5rem 0.6rem;
-  border-bottom: 1px solid #e8e8e8;
-  vertical-align: top;
+.talk-card {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
 }
 
-.talks th {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #555;
+.talk-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.talks tbody {
-    font-size: 1rem;
+.talk-main {
+  flex: 1;
 }
 
-.talk-date {
-  white-space: nowrap;
+.talk-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.talk-title {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.talk-links {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
 }
 
 .talk-muted {
-  color: #828282;
-  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
 }
+
 
 /* Footer styling */
 
@@ -84,6 +98,11 @@
   }
 }
 
+.page-content {
+  padding: 0.75rem;
+}
+
 .page-content h2 {
-  font-size: 1.5em; /* match Minima’s h2 */
+  font-size: 1.5em;
+  margin-bottom: 0rem;
 }

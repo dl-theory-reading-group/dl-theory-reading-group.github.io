@@ -1,9 +1,0 @@
-{%- assign t = include.talk -%}
-<tr>
-  <td class="talk-date">{{ t.date | date: "%b %-d, %Y" }}</td>
-  <td>{{ t.presenter }}</td>
-  <td>{% if t.paper != blank %}<a href="{{ t.paper }}">{{ t.title }}</a>{% else %}{{ t.title }}none{% endif %}</td>
-  <td>{% if t.poster %}<a href="{{ t.poster }}">poster</a>{% else %}none{% endif %}</td>
-  <td>{% if t.slides %}<a href="{{ t.slides }}">slides</a>{% else %}none{% endif %}</td>
-  <td>{% if t.video %}<a href="{{ t.video }}">video</a>{% else %}none{% endif %}</td>
-</tr>
